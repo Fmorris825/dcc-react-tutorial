@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddEntryForm.css';
 
 
 const AddEntry = (props) => {
@@ -17,12 +18,16 @@ const AddEntry = (props) => {
     }
 
     return (  
-        <form onSubmit={handleSubmit}>
-            <label>Weight</label>
-            <input type='number' value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))}/>
+        <form className='form-grid' onSubmit={handleSubmit}>
+            <div className='form-group'>
+                <label>Weight</label>
+                <input type='number' className='form-control' value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))}/>
+            </div>
+            <div className='form-group'>
             <label>Date</label>
-            <input type='date' value={date} onChange={(event) => setDate(event.target.value)}/>
-            <button type='submit'>Add</button>
+                <input type='date' className='form-control' value={date} onChange={(event) => setDate(event.target.value)}/>
+                <button type='submit' className='btn btn-primary' style={{'margin-top': '1em'}}>Add</button>
+            </div>
         </form>
     );
 }

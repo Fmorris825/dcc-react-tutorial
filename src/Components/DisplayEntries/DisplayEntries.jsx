@@ -1,7 +1,7 @@
 const DisplayEntries = (props) => {
     return (  
         <div>
-        <table>
+        <table className='table'>
           <thead>
             <tr>
               <th>Entry Number</th>
